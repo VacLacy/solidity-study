@@ -1,0 +1,18 @@
+  "0xca8d4039a28d17e82473794b53d402d119d1a39d":
+          {
+              "balance": "1000000000000000000"
+          }
+
+
+
+"0xe077fb1e225091dcbfc1d42118a469dbe3dd6f05"
+ 
+mypassword
+
+
+eth.getBalance("0xca8d4039a28d17e82473794b53d402d119d1a39d")
+
+geth --datadir "./" --networkid 1234 --rpc  --rpcport "8545"  --rpcapi="web3,eth,debug,personal,net"  --rpccorsdomain "*" --allow-insecure-unlock  console 2>console.log
+
+
+personal.unlockAccount("0xca8d4039a28d17e82473794b53d402d119d1a39d", "mypassword")
