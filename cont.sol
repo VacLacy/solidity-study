@@ -1,25 +1,44 @@
 pragma solidity ^0.4.19;
 
 contract ws {
-    struct Driver {
-        string name;
-        uint stage;
-        uint dtp;
-        uint fine;
-        uint insurancefee;
-        uint balance;
+    uint id;
+    int count = -1;
+    struct confirmation{
+        uint number;
+        string validity;
+        string category;
+        uint valid;
     }
     struct Car {
         uint number;
         string validity;
         string category;
+        string strah;
     }
-    registrationCar[] public regCar;
-    registrationDriver[] public regDriver;
+    Car[] public regCar;
+    confirmation[] public conf;
+    
     function _registrationCar (uint _number, string _validity, string _category) public {
-        regCar.push(registrationCar(_number,_validity,_category));
+        uint valid = 0;
+        conf.push(confirmation(_number,_validity,_category, valid));
+        count = count + 1;
     }
-    function _registrationDriver (string _name, uint _stage, uint _dtp, uint _fine, uint _insurancefee, uint _balance) public {
-        reg
+    
+    function confirm (uint _id) public {
+        
     }
+    function unfinfirm1 (uint _id) public {
+        id = _id;
+        delete conf[id];
+        
+    }
+    function getlastnumber () public constant returns(int) {
+        return count;
+    }
+    
+    function getstrah (int _count) public  {
+        count = _count;
+    }
+    
+    
 }
